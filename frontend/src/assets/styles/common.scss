@@ -1,0 +1,133 @@
+$gap-small: 8px;
+$gap-medium: 12px;
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+
+.responsive-container {
+  max-width: 1000px;
+}
+
+@media (min-width: 1600px) {
+  .responsive-container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .responsive-container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 2400px) {
+  .responsive-container {
+    max-width: 1800px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .responsive-container {
+    max-width: 100%;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin inline-center {
+  display: inline;   
+  flex-direction: row;   
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-2 {
+  gap: $gap-small;
+}
+
+.rounded-xxl {
+  border-radius: 40px;
+}
+
+.rounded-xxxl {
+  border-radius: 50px;
+}
+
+.appbar-btn-group {
+  display: flex;
+  align-items: center;
+  gap: $gap-medium;
+}
+
+.section-pad-normal {
+  padding-bottom: 150px;
+}
+
+@media (max-width: 600px) {
+  .section-pad-normal {
+    padding-bottom: 50px;
+  }
+}
+
+.highlight {
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--v-theme-orange), 0.4);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 10px;
+}
+
+.bottom-disappear-gradient-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .bottom-disappear-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100%);
+    pointer-events: none; 
+  }
+}
+
+.hover-transition-dark-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4); 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  &:hover .hover-overlay {
+    opacity: 1; 
+  }
+}
+
+
